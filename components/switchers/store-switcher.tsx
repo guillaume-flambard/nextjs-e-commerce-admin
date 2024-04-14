@@ -53,6 +53,7 @@ export default function StoreSwitcher({
     setOpen(false);
     router.push(`/${store.value}`);
   };
+
   return (
     <Popover open={open} onOpenChange={setOpen}>
       <PopoverTrigger asChild>
@@ -65,7 +66,7 @@ export default function StoreSwitcher({
           className={cn("w-[200px] justify-between", className)}
         >
           <StoreIcon className="mr-2 h-4 w-4" />
-          current store
+          {currentStore?.label}
           <ChevronsUpDown className="ml-auto h-4 w-4 shrink-0 opacity-50" />
         </Button>
       </PopoverTrigger>
