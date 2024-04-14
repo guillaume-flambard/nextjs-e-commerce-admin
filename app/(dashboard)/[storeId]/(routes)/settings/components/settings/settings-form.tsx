@@ -26,7 +26,7 @@ import toast from "react-hot-toast";
 import * as z from "zod";
 
 interface SettingsFormProps {
-  initialData: Store | null;
+  initialData?: Store | "";
 }
 
 const formSchema = z.object({
@@ -74,6 +74,7 @@ const SettingsForm: React.FC<SettingsFormProps> = ({ initialData }) => {
     } finally {
       setLoading(false);
       setOpen(false);
+      router.refresh();
     }
   };
   return (
