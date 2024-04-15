@@ -38,7 +38,6 @@ const formSchema = z.object({
 type BillboardFormValues = z.infer<typeof formSchema>;
 
 const BillboardForm: React.FC<BillboardFormProps> = ({ initialData }) => {
-  const origin = useOrigin();
   const params = useParams();
   const router = useRouter();
   const [open, setOpen] = useState(false);
