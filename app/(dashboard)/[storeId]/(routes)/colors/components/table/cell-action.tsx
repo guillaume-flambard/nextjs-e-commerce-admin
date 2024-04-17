@@ -7,7 +7,7 @@ import {
   DropdownMenuLabel,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
-import type { CategoryColumn } from "./columns";
+import type { ColorColumn } from "./columns";
 import { Button } from "@/components/ui/button";
 import { Copy, Edit, MoreHorizontal, Trash } from "lucide-react";
 import toast from "react-hot-toast";
@@ -17,7 +17,7 @@ import axios from "axios";
 import AlertModal from "@/components/modals/alert-modal";
 
 interface CellActionProps {
-  data: CategoryColumn;
+  data: ColorColumn;
 }
 
 const CellAction: React.FC<CellActionProps> = ({ data }) => {
@@ -29,19 +29,19 @@ const CellAction: React.FC<CellActionProps> = ({ data }) => {
 
   const onCopy = (id: string) => {
     navigator.clipboard.writeText(id);
-    toast.success("Category ID copied to clipboard");
+    toast.success("Color ID copied to clipboard");
   };
 
   const onDelete = async () => {
     try {
       setLoading(true);
-      await axios.delete(`/api/${params.storeId}/categories/${data.id}`);
-      router.push(`/${params.storeId}/categories`);
+      await axios.delete(`/api/${params.storeId}/colors/${data.id}`);
+      router.push(`/${params.storeId}/colors`);
       router.refresh();
-      toast.success("Category deleted successfully");
+      toast.success("Color deleted successfully");
     } catch (error) {
       toast.error(
-        "Failed to delete the category due to an unexpected error. Please try again later."
+        "Failed to delete color be sure to delete all products and orders before deleting the color"
       );
     } finally {
       setLoading(false);
@@ -71,9 +71,7 @@ const CellAction: React.FC<CellActionProps> = ({ data }) => {
             Copy Id
           </DropdownMenuItem>
           <DropdownMenuItem
-            onClick={() =>
-              router.push(`/${params.storeId}/categories/${data.id}`)
-            }
+            onClick={() => router.push(`/${params.storeId}/colors/${data.id}`)}
           >
             <Edit className="w-4 h-4 mr-2" />
             Update

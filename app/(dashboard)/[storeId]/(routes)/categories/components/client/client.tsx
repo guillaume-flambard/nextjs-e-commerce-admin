@@ -19,19 +19,24 @@ const CategoryClient: React.FC<CategoryClientProps> = ({ data }) => {
     <>
       <div className="flex items-center justify-between">
         <Heading
-          title={`Category (${data.length})`}
-          description="Manage your category"
+          title={`Categories (${data.length})`}
+          description="Manage your categories"
         />
-        <Button onClick={() => router.push(`/${params.storeId}/category/new`)}>
+        <Button
+          onClick={() => router.push(`/${params.storeId}/categories/new`)}
+        >
           <Plus className="mr-2 h-4 w-4" />
           Add new
         </Button>
       </div>
       <Separator />
-      <DataTable searchKey="label" columns={columns} data={data} />
-      <Heading title="API" description="API calls for your category" />
+      <DataTable searchKey="name" columns={columns} data={data} />
+      <Heading
+        title="API"
+        description="API calls for your categories for your store"
+      />
       <Separator />
-      <ApiList entityName="category" entityIdName="billboardId" />
+      <ApiList entityName="categories" entityIdName="{categoryId}" />
     </>
   );
 };

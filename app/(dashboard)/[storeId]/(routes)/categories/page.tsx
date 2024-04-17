@@ -8,6 +8,7 @@ const CategoriesPage = async ({
 }: {
   params: {
     storeId: string;
+    categoryId: string;
   };
 }) => {
   const categories = await prismadb.category.findMany({
