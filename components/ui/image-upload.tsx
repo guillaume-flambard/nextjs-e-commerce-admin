@@ -35,10 +35,10 @@ const ImageUpload: React.FC<ImageUploadProps> = ({
   return (
     <>
       <div className="mb-4 flex items-center gap-4">
-        {value.map((url) => (
+        {value.map((url, index) => (
           <div
             className="relative w-[200px] h-[200px]  rounded-md overflow-hidden"
-            key={url}
+            key={index}
           >
             <div className="absolute z-10 top-2 right-2">
               <Button
@@ -58,7 +58,7 @@ const ImageUpload: React.FC<ImageUploadProps> = ({
           </div>
         ))}
       </div>
-      <CldUploadWidget onSuccess={onUpload} uploadPreset="lt2jn2wm">
+      <CldUploadWidget onUpload={onUpload} uploadPreset="lt2jn2wm">
         {({ open }) => {
           const onClick = () => {
             open();
