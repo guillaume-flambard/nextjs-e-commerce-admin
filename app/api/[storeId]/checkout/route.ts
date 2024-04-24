@@ -1,6 +1,6 @@
 import prismadb from "@/lib/prismadb";
-import { NextResponse } from "next/server";
 import { stripe } from "@/lib/stripe";
+import { NextResponse } from "next/server";
 import type Stripe from "stripe";
 
 const corsHeaders = {
@@ -58,7 +58,7 @@ export async function POST(
   const order = await prismadb.order.create({
     data: {
       storeId: params.storeId,
-      isPaid: false,
+      isPaid: true,
       orderItems: {
         create: productIds.map((productId: string) => ({
           product: {

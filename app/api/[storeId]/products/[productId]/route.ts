@@ -23,6 +23,10 @@ export async function GET(
       },
     });
 
+    console.log("productcat", product?.category);
+
+    // console.log("[PRODUCT_GET]", product);
+
     return NextResponse.json(product);
   } catch (error) {
     console.log("[PRODUCT_GET]", error);

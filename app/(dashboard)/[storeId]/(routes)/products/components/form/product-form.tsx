@@ -226,7 +226,7 @@ const ProductForm: React.FC<ProductFormProps> = ({
                   <FormLabel>Category</FormLabel>
                   <Select
                     disabled={loading}
-                    value={field.value}
+                    value={field.name}
                     onValueChange={field.onChange}
                     defaultValue={field.value}
                   >
