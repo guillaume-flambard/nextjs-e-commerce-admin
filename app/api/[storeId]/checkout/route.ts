@@ -3,16 +3,16 @@ import { stripe } from "@/lib/stripe";
 import { NextResponse } from "next/server";
 import type Stripe from "stripe";
 
-// const corsHeaders = {
-//   "Access-Control-Allow-Origin": "*",
-//   "Access-Control-Allow-Methods": "GET, POST, PUT, DELETE, OPTIONS",
-//   "Access-Control-Allow-Headers":
-//     "Content-Type, Authorization, Content-Length, X-Requested-With",
-// };
+const corsHeaders = {
+  "Access-Control-Allow-Origin": "*",
+  "Access-Control-Allow-Methods": "GET, POST, PUT, DELETE, OPTIONS",
+  "Access-Control-Allow-Headers":
+    "Content-Type, Authorization, Content-Length, X-Requested-With",
+};
 
-// export async function OPTIONS() {
-//   return NextResponse.json({}, { headers: corsHeaders });
-// }
+export async function OPTIONS() {
+  return NextResponse.json({}, { headers: corsHeaders });
+}
 
 export async function POST(
   req: Request,
@@ -85,8 +85,5 @@ export async function POST(
     },
   });
 
-  return NextResponse.json(
-    { url: session.url }
-    // { headers: corsHeaders }
-  );
+  return NextResponse.json({ url: session.url }, { headers: corsHeaders });
 }
