@@ -87,7 +87,7 @@ const ProductForm: React.FC<ProductFormProps> = ({
       : {
           name: "",
           images: [],
-          price: 9.99,
+          price: 0,
           categoryId: "",
           colorId: "",
           sizeId: "",
@@ -226,7 +226,7 @@ const ProductForm: React.FC<ProductFormProps> = ({
                   <FormLabel>Category</FormLabel>
                   <Select
                     disabled={loading}
-                    value={field.name}
+                    value={field.value}
                     onValueChange={field.onChange}
                     defaultValue={field.value}
                   >
