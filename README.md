@@ -1,6 +1,6 @@
 # E-Commerce Admin 🛍️
 
-(You can see the Store at my other repo [here](https://github.com/guillaume-flambard/nextjs-e-commerce-store))
+(You can see the Store at my other repo [HERE](https://github.com/guillaume-flambard/nextjs-e-commerce-store))
 
 `E-commerce Admin` is a starter template made with Next.js 14, allowing you to quickly create an e-commerce administration interface.
 
@@ -33,7 +33,7 @@ npm run build
 ### 3.Start the server
 
 ```bash
-npm run start
+npm run dev
 ```
 
 ## ☔️ Dependencies
@@ -62,21 +62,16 @@ NEXT_PUBLIC_CLERK_SIGN_UP_URL=/sign-up
 NEXT_PUBLIC_CLERK_AFTER_SIGN_IN_URL=/
 NEXT_PUBLIC_CLERK_AFTER_SIGN_UP_URL=/
 
-# This was inserted by `prisma init`:
-# Environment variables declared in this file are automatically made available to Prisma.
-# See the documentation for more detail: https://pris.ly/d/prisma-schema#accessing-environment-variables-from-the-schema
-
-# Prisma supports the native connection string format for PostgreSQL, MySQL, SQLite, SQL Server, MongoDB and CockroachDB.
-# See the documentation for all the connection string options: https://pris.ly/d/connection-strings
+# Prisma
 DATABASE_URL="postgresql://USER:PASSWORD@localhost:5432/e-commerce?schema=public"
+
 # Cloudinary
 NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME="choose a name"
+
 # Stripe
 STRIPE_SECRET_KEY="go to your stripe account to get this key"
 STRIPE_PUBLIC_KEY="go to your stripe account to get this key"
-FRONTEND_STORE_URL=http://localhost:3001
-
-
+FRONTEND_STORE_URL=http://localhost:3001 # the url of your store
 STRIPE_WEBHOOK_SECRET="go to your stripe account to get this key"
 ```
 
